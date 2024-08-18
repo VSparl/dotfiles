@@ -1,7 +1,6 @@
 # Theme initialization
 $theme = 'slimfat'
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\$theme.omp.json" | Invoke-Expression
-echo "Using theme $theme"
 
 # Function to remove items recursively and forced, similar to Unix's "rm -rf" command
 function rmf([string]$item)
