@@ -18,5 +18,23 @@ function la()
 function cnd([string]$name)
 {
 	mkdir $name
-	cd $name
+	Set-Location $name
+}
+
+# Function to change directly to the school directory
+function cds()
+{
+	Set-Location "C:\Users\sparl\OneDrive - EDU ZG\Schuljahr 2024-2025"
+}
+
+# Function to hide a file
+function hide([string]$file)
+{
+	attrib +h $file
+}
+
+# Function to show a file
+function show([string]$file)
+{
+	attrib -h $file
 }
