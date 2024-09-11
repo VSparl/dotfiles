@@ -1,0 +1,1 @@
+symlink $env:localappdata\nvim .\
