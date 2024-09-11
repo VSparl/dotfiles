@@ -27,14 +27,21 @@ function cds()
 	Set-Location "C:\Users\sparl\OneDrive - EDU ZG\Schuljahr 2024-2025"
 }
 
-# Function to hide a file
-function hide([string]$file)
-{
-	attrib +h $file
+# Function to list folder contents and sort them by date
+function lst{
+	param (
+		[string]$Folder = "."
+	)
+	Get-ChildItem -Path $Folder | Sort-Object -Property CreationTime -Descending
 }
 
-# Function to show a file
-function show([string]$file)
-{
-	attrib -h $file
+# Function to create a symlink to a certain directory
+function symlink {
+	param (
+		[Parameter(Mandatory=$true)]
+		[string]$source,
+		[Parameter(Mandatory=$true)]
+		[string]$destination
+	)
+	sudo cmd /c mklink /d "$source" "$destination"
 }
