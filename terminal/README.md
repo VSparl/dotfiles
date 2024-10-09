@@ -4,7 +4,7 @@ The entire Windows Terminal configuration fits into the `settings.json` file, so
 
 If you've installed Windows Terminal from the Microsoft Store or it was preinstalled on your OS:
 ```powershell
-rm $env:localappdata\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+Rename-Item -Force $env:localappdata\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json settings.json.bak
 sudo cmd /c mklink $env:localappdata\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json (Resolve-Path .\settings.json).Path
 ```
 
