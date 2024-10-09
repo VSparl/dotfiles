@@ -23,7 +23,7 @@ winget install --id Microsoft.PowerShell --source winget
 
 To make a symlink of your profile so the settings, aliases, colors etc. are consistent accross systems, execute the following command:
 ```powershell
-sudo cmd /c mklink $home\Documents\PowerShell\Microsoft.Powershell_profile.ps1 .\profile.ps1
+sudo cmd /c mklink $home\Documents\PowerShell\Microsoft.Powershell_profile.ps1 (Resolve-Path .\profile.ps1).Path
 ```
 
 # Scoop package manager
