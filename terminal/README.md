@@ -10,7 +10,7 @@ sudo cmd /c mklink $env:localappdata\Packages\Microsoft.WindowsTerminal_8wekyb3d
 
 If you've installed Windows Terminal yourself through the .zip folder or scoop download:
 ```powershell
-rm '$env:localappdata\Microsoft\Windows Terminal\settings.json'
+Rename-Item -Force '$env:localappdata\Microsoft\Windows Terminal\settings.json' settings.json.bak
 sudo cmd /c mklink '$env:localappdata\Microsoft\Windows Terminal\settings.json' (Resolve-Path .\settings.json).Path
 ```
 
@@ -23,7 +23,7 @@ winget install --id Microsoft.PowerShell --source winget
 
 To make a symlink of your profile so the settings, aliases, colors etc. are consistent accross systems, execute the following command:
 ```powershell
-rm $home\Documents\PowerShell\Microsoft.Powershell_profile.ps1
+Rename-Item -Force $home\Documents\PowerShell\Microsoft.Powershell_profile.ps1 Microsoft.Powershell_profile.ps1.bak
 sudo cmd /c mklink $home\Documents\PowerShell\Microsoft.Powershell_profile.ps1 (Resolve-Path .\profile.ps1).Path
 ```
 
