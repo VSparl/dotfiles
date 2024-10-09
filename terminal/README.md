@@ -23,12 +23,13 @@ winget install --id Microsoft.PowerShell --source winget
 
 To make a symlink of your profile so the settings, aliases, colors etc. are consistent accross systems, execute the following command:
 ```powershell
+rm $home\Documents\PowerShell\Microsoft.Powershell_profile.ps1
 sudo cmd /c mklink $home\Documents\PowerShell\Microsoft.Powershell_profile.ps1 (Resolve-Path .\profile.ps1).Path
 ```
 
 # Scoop package manager
 
-[Scoop](scoop.sh) is a package manager similar to winget, but it keeps all executables in one place for easier finding and to keep the PATH variable from getting cluttered.
+[Scoop](https://scoop.sh) is a package manager similar to winget, but it keeps all executables in one place for easier finding and to keep the PATH variable from getting cluttered.
 Install scoop with:
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -37,7 +38,7 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 
 # Oh-My-Posh
 
-[Oh-My-Posh](ohmyposh.dev) is a program that makes the shell prettier and allows for themes at the prompt.
+[Oh-My-Posh](https://ohmyposh.dev) is a program that makes the shell prettier and allows for themes at the prompt.
 Install it via scoop with:
 ```powershell
 scoop install oh-my-posh
