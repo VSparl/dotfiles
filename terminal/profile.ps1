@@ -2,6 +2,18 @@
 $theme = 'slimfat'
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\$theme.omp.json" | Invoke-Expression
 
+# Make the autocomplete suggestions come from command history
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+# Color the command prediction
+Set-PSReadLineOption -Colors @{InlinePrediction = '#D18D8D'}
+
+# Aliases
+Set-Alias celar clear
+Set-Alias claer clear
+Set-Alias cat bat
+
 # Function to remove items recursively and forced, similar to Unix's "rm -rf" command
 function rmf([string]$item)
 {
@@ -45,3 +57,4 @@ function symlink {
 	)
 	sudo cmd /c mklink /d "$source" "$destination"
 }
+
