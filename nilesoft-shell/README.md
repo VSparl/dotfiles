@@ -31,3 +31,7 @@ Create the symlink using:
 Rename-Item $home\scoop\apps\nilesoft-shell\current\imports imports.bak
 sudo cmd  /c mklink /d $home\scoop\apps\nilesoft-shell\current\imports (Resolve-Path .\imports).Path
 ```
+
+### shell.log
+
+This is just a symlink pointing to the log file that is created in the `~/scoop/apps/nilesoft-shell/current/` folder for easy access from the `dotfiles` folder.
