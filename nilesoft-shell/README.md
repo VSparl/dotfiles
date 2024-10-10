@@ -29,5 +29,14 @@ The [`imports`](./imports) folder contains additional `.nss` files that are call
 Create the symlink using:
 ```powershell
 Rename-Item $home\scoop\apps\nilesoft-shell\current\imports imports.bak
-sudo cmd  /c mklink /d $home\scoop\apps\nilesoft-shell\current\imports (Resolve-Path .\imports).Path
+sudo cmd /c mklink /d $home\scoop\apps\nilesoft-shell\current\imports (Resolve-Path .\imports).Path
+```
+
+### icons
+
+These are various icons that are used in the `.nss` files. While they could also be defined as SVGs in [`imports/images.nss`](./imports/images.nss), I haven't figured that out yet. So for now they have their own folder.
+Of course, this requires a symlink as well:
+```powershell
+Rename-Item $home\scoop\apps\nilesoft-shell\current\icons icons.bak
+sudo cmd /c mklink /d $home\scoop\apps\nilesoft-shell\current\icons (Resolve-Path .\icons).Path
 ```

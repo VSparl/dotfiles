@@ -680,3 +680,27 @@ $svg_window_template='<path fill="@image.color1" d="M3.453 15C3.12 15 2.805 14.9
 	<path fill="@image.color1" d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063z"/>
 	<path fill="@image.color2" d="m0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z"/>
 </svg>'
+
+@nvim='
+<svg fill="none" viewbox="0 0 602 734" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <lineargradient x1="50%" y1="0%" x2="50%" y2="100%" id="a">
+      <stop stop-color="#16b0ed" stop-opacity=".8" offset="0%"/>
+      <stop stop-color="#0f59b2" stop-opacity=".837" offset="100%"/>
+    </lineargradient>
+    <lineargradient x1="50%" y1="0%" x2="50%" y2="100%" id="b">
+      <stop stop-color="#7db643" offset="0%"/>
+      <stop stop-color="#367533" offset="100%"/>
+    </lineargradient>
+    <lineargradient x1="50%" y1="0%" x2="50%" y2="100%" id="c">
+      <stop stop-color="#88c649" stop-opacity=".8" offset="0%"/>
+      <stop stop-color="#439240" stop-opacity=".84" offset="100%"/>
+    </lineargradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path d="m0 155.57 155-1v728l0 572.238z" fill="url(#a)" transform="translate(2 3)"/>
+    <path d="m443.06 156.982 600-1l-3.181 728l442 572.22z" fill="url(#b)" transform="matrix(-1 0 0 1 1044 3)"/>
+    <path d="m154.986 0 558 615.19 445.225 728 42 114.172z" fill="url(#c)" transform="translate(2 3)"/>
+    <path d="m157 286.832 156.787 311 33 127.71 44.462 116z" fill-opacity=".13" fill="#000"/>
+  </g>
+</svg>'
