@@ -1,4 +1,9 @@
-# Windows Terminal configuration
+# Terminal configurations
+
+I use two terminal applications (Windows Terminal and WezTerm). In each I have the same PowerShell Core profile and use the scoop package manager for ecerything I can.
+Due to the size of WezTerm's config files, they have gotten their own folder [../wezterm](here).
+
+## Windows Terminal configuration
 
 The entire Windows Terminal configuration fits into the `settings.json` file, so you can make a symlink to keep it up to date.
 
@@ -14,7 +19,7 @@ Rename-Item -Force '$env:localappdata\Microsoft\Windows Terminal\settings.json' 
 sudo cmd /c mklink '$env:localappdata\Microsoft\Windows Terminal\settings.json' (Resolve-Path .\settings.json).Path
 ```
 
-# PowerShell profile configuration
+## PowerShell profile configuration
 
 This configuration applies to PowerShell Core (not Windows PowerShell), which can be downloaded via:
 ```powershell
@@ -27,7 +32,7 @@ Rename-Item -Force $home\Documents\PowerShell\Microsoft.Powershell_profile.ps1 M
 sudo cmd /c mklink $home\Documents\PowerShell\Microsoft.Powershell_profile.ps1 (Resolve-Path .\profile.ps1).Path
 ```
 
-# Scoop package manager
+## Scoop package manager
 
 [Scoop](https://scoop.sh) is a package manager similar to winget, but it keeps all executables in one place for easier finding and to keep the PATH variable from getting cluttered.
 Install scoop with:
@@ -36,7 +41,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 ```
 
-# Oh-My-Posh
+## Oh-My-Posh
 
 [Oh-My-Posh](https://ohmyposh.dev) is a program that makes the shell prettier and allows for themes at the prompt.
 Install it via scoop with:
