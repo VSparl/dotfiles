@@ -7,7 +7,7 @@
 	menu(title='Editors' mode="single" image=\uE17A)
 	{
 		item(title='Visual Studio Code' image=[\uE272, #22A7F2] cmd='code' args='"@sel.path"')
-		item(title='NeoVim' image="..\\icons\\nvim.svg" cmd='wezterm-gui.exe' args='start --cwd "@sel.dir" nvim "@sel.path"')
+		item(title='NeoVim' cmd='wezterm-gui.exe' args='start --cwd "@sel.dir" nvim "@sel.path"')
 		item(type='file' mode="single" title='Notepad' image='@sys.bin\notepad.exe' cmd='@sys.bin\notepad.exe' args='"@sel.path"')
 	}
 
