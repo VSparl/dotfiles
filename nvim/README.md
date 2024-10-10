@@ -1,7 +1,7 @@
 # Neovim cofig folder
 
-[https://neovim.io/](Neovim) is a text editor based on vim which offers very extensive APIs and a lot of customization options.
-The config that is currently used here is [https://astronvim.com/](AstroNvim) with a few configuration changes.
+[Neovim](https://neovim.io/) is a text editor based on vim which offers very extensive APIs and a lot of customization options.
+The config that is currently used here is [AstroNvim](https://astronvim.com/) with a few configuration changes.
 
 For initialization on Windows, run the following command:
 

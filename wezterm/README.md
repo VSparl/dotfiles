@@ -1,6 +1,6 @@
 # WezTerm configuration
 
-[https://wezfurlong.org/wezterm](WezTerm) is a terminal emulator with very impressive capabilities and virtually endless customization.
+[WezTerm](https://wezfurlong.org/wezterm) is a terminal emulator with very impressive capabilities and virtually endless customization.
 
 To create the symlink, execute the following commands:
 ```powershell

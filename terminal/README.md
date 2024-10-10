@@ -1,7 +1,7 @@
 # Terminal configurations
 
 I use two terminal applications (Windows Terminal and WezTerm). In each I have the same PowerShell Core profile and use the scoop package manager for ecerything I can.
-Due to the size of WezTerm's config files, they have gotten their own folder [../wezterm](here).
+Due to the size of WezTerm's config files, they have gotten their own folder [here](../wezterm).
 
 ## Windows Terminal configuration
 

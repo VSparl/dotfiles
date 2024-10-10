@@ -9,4 +9,4 @@ This repo is broken down into directories for the different programs that store 
 Each section also contains a `README.md`, outlining the usage and installation of the corresponding service.
 
 ## Tweaks.md
-There is one additional file in the root directory [./tweaks.md]((`tweaks.md`)) in which I store smaller things like registry edits or scripts that I found useful but don't really have a spot in their own directory.
+There is one additional file in the root directory ([`tweaks.md`](./tweaks.md)) in which I store smaller things like registry edits or scripts that I found useful but don't really have a spot in their own directory.
