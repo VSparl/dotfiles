@@ -29,5 +29,5 @@ The [`imports`](./imports) folder contains additional `.nss` files that are call
 Create the symlink using:
 ```powershell
 Rename-Item $home\scoop\apps\nilesoft-shell\current\imports imports.bak
-sudo cmd  /c mklink /d $home\scoop\apps\nilesoft-shell\current\imports .\imports
+sudo cmd  /c mklink /d $home\scoop\apps\nilesoft-shell\current\imports (Resolve-Path .\imports).Path
 ```
