@@ -16,7 +16,7 @@ The config files have to be in the same directory as the shell.exe executable, b
 
 ### shell.nss
 
-The main file is called [`shell.nss`](.\shell.nss). From here, the rest of the scripts and `.nss` files are called.
+The main file is called [`shell.nss`](./shell.nss). From here, the rest of the scripts and `.nss` files are called.
 Create the symlink using:
 ```powershell
 Rename-Item $home\scoop\apps\nilesoft-shell\current\shell.nss shell.nss.bak
