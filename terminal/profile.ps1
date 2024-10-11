@@ -1,6 +1,5 @@
 # Theme initialization
-$theme = 'slimfat'
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\$theme.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$home\programming\dotfiles\terminal\vsparl.omp.json" | Invoke-Expression
 
 # Make the autocomplete suggestions come from command history
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
@@ -58,3 +57,7 @@ function symlink {
 	sudo cmd /c mklink /d "$source" "$destination"
 }
 
+# Function to fuzzily find files and preview them with live coloring through bat
+function fzf {
+	fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"
+}

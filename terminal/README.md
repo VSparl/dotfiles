@@ -50,4 +50,4 @@ scoop install oh-my-posh
 ```
 
 Oh-My-Posh is also used in the profile.ps1 file, so not installing would yield an error message on each shell start. To avoid this, you can just remove the first lines responsible for configuring Oh-My-Posh.
-
+Oh-My-Posh uses the vsparl theme, which I have made based on the slimfat theme by [irdkwmnsb](https://github.com/irdkwmnsb).
