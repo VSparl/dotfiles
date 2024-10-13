@@ -6,7 +6,7 @@ Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 # Color the command prediction
-Set-PSReadLineOption -Colors @{InlinePrediction = '#D18D8D'}
+Set-PSReadLineOption -Colors @{InlinePrediction = '#b48ead'}
 
 # Aliases
 Set-Alias celar clear
