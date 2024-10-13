@@ -4,13 +4,14 @@
 
 local wezterm = require('wezterm')
 local Cells = require('utils.cells')
+local colorscheme = require('colors.custom')
 
 local nf = wezterm.nerdfonts
 local attr = Cells.attr
 
 local GLYPH_SCIRCLE_LEFT = nf.ple_left_half_circle_thick --[[  ]]
 local GLYPH_SCIRCLE_RIGHT = nf.ple_right_half_circle_thick --[[  ]]
-local GLYPH_CIRCLE = nf.fa_circle --[[  ]]
+local GLYPH_CIRCLE = nf.fa_circle .. ' ' --[[  ]]
 local GLYPH_ADMIN = nf.md_shield_half_full --[[ 󰞀 ]]
 local GLYPH_UBUNTU = nf.cod_terminal_linux --[[  ]]
 local GLYPH_DEBUG = nf.fa_bug --[[  ]]
@@ -23,28 +24,28 @@ local TITLE_INSET = {
 local M = {}
 
 local RENDER_VARIANTS = {
-   { 'scircle_left', 'title', 'padding', 'scircle_right' },
-   { 'scircle_left', 'title', 'unseen_output', 'padding', 'scircle_right' },
-   { 'scircle_left', 'admin', 'title', 'padding', 'scircle_right' },
-   { 'scircle_left', 'admin', 'title', 'unseen_output', 'padding', 'scircle_right' },
-   { 'scircle_left', 'wsl', 'title', 'padding', 'scircle_right' },
-   { 'scircle_left', 'wsl', 'title', 'unseen_output', 'padding', 'scircle_right' },
+   { 'scircle_left', 'title', 'padding',       'scircle_right' },
+   { 'scircle_left', 'title', 'unseen_output', 'padding',       'scircle_right' },
+   { 'scircle_left', 'admin', 'title',         'padding',       'scircle_right' },
+   { 'scircle_left', 'admin', 'title',         'unseen_output', 'padding',      'scircle_right' },
+   { 'scircle_left', 'wsl',   'title',         'padding',       'scircle_right' },
+   { 'scircle_left', 'wsl',   'title',         'unseen_output', 'padding',      'scircle_right' },
 }
 
--- stylua: ignore
+local green = colorscheme.ansi[3]
+
 local COLORS = {
-   default              = { bg = '#45475A', fg = '#1C1B19' },
-   default_hover        = { bg = '#587D8C', fg = '#1C1B19' },
-   default_active       = { bg = '#7FB4CA', fg = '#11111B' },
-   unseen_output        = { bg = '#45475A', fg = '#FFA066' },
-   unseen_output_hover  = { bg = '#587D8C', fg = '#FFA066' },
-   unseen_output_active = { bg = '#7FB4CA', fg = '#FFA066' },
-   scircle              = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#45475A' },
-   scircle_hover        = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#587D8C' },
-   scircle_active       = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#7FB4CA' },
+   default              = { bg = colorscheme.tab_bar.background, fg = colorscheme.tab_bar.inactive_tab.fg_color },                        -- Tab unselected, not hovering
+   default_hover        = { bg = colorscheme.tab_bar.inactive_tab_hover.bg_color, fg = colorscheme.tab_bar.inactive_tab_hover.fg_color }, -- Tab unselected, hovering
+   default_active       = { bg = colorscheme.tab_bar.active_tab.bg_color, fg = colorscheme.tab_bar.active_tab.fg_color },                 -- Tab selected (hover ignored)
+   unseen_output        = { bg = colorscheme.tab_bar.background, fg = green },                                                            -- Tab unselected, not hovering, unseen output
+   unseen_output_hover  = { bg = colorscheme.tab_bar.inactive_tab_hover.bg_color, fg = green },                                           -- Tab unselected, hovering, unseen output
+   unseen_output_active = { bg = colorscheme.tab_bar.active_tab.bg_color, fg = green },                                                   -- Tab selected, unseen output (hover ignored)
+   scircle              = { bg = colorscheme.background, fg = colorscheme.tab_bar.background },                                           -- Tab unselected, not hovering
+   scircle_hover        = { bg = colorscheme.background, fg = colorscheme.tab_bar.inactive_tab_hover.bg_color },                          -- Tab unselected, hovering
+   scircle_active       = { bg = colorscheme.background, fg = colorscheme.tab_bar.active_tab.bg_color },                                  -- Tab selected (hover ignored)
 }
 
--- stylua: ignore
 local SEGMENT_COLORS = {
    scircle       = { default = 'scircle', hover = 'scircle_hover', active = 'scircle_active', },
    text          = { default = 'default', hover = 'default_hover', active = 'default_active', },
@@ -141,13 +142,13 @@ function Tab:set_cells(is_active, hover)
    end
 
    self.cells
-      :push('scircle_left', GLYPH_SCIRCLE_LEFT, SEGMENT_COLORS['scircle'][color_variant])
-      :push('admin', ' ' .. GLYPH_ADMIN, SEGMENT_COLORS['text'][color_variant])
-      :push('wsl', ' ' .. GLYPH_UBUNTU, SEGMENT_COLORS['text'][color_variant])
-      :push('title', ' ', SEGMENT_COLORS['text'][color_variant], attr(attr.intensity('Bold')))
-      :push('unseen_output', ' ' .. GLYPH_CIRCLE, SEGMENT_COLORS['unseen_output'][color_variant])
-      :push('padding', ' ', SEGMENT_COLORS['text'][color_variant])
-      :push('scircle_right', GLYPH_SCIRCLE_RIGHT, SEGMENT_COLORS['scircle'][color_variant])
+       :push('scircle_left', GLYPH_SCIRCLE_LEFT, SEGMENT_COLORS['scircle'][color_variant])
+       :push('admin', ' ' .. GLYPH_ADMIN, SEGMENT_COLORS['text'][color_variant])
+       :push('wsl', ' ' .. GLYPH_UBUNTU, SEGMENT_COLORS['text'][color_variant])
+       :push('title', ' ', SEGMENT_COLORS['text'][color_variant], attr(attr.intensity('Bold')))
+       :push('unseen_output', ' ' .. GLYPH_CIRCLE, SEGMENT_COLORS['unseen_output'][color_variant])
+       :push('padding', ' ', SEGMENT_COLORS['text'][color_variant])
+       :push('scircle_right', GLYPH_SCIRCLE_RIGHT, SEGMENT_COLORS['scircle'][color_variant])
 end
 
 ---@param title string
@@ -169,13 +170,13 @@ function Tab:update_cells(is_active, hover)
 
    self.cells:update_segment_text('title', ' ' .. self.title)
    self.cells
-      :update_segment_colors('scircle_left', SEGMENT_COLORS['scircle'][color_variant])
-      :update_segment_colors('admin', SEGMENT_COLORS['text'][color_variant])
-      :update_segment_colors('wsl', SEGMENT_COLORS['text'][color_variant])
-      :update_segment_colors('title', SEGMENT_COLORS['text'][color_variant])
-      :update_segment_colors('unseen_output', SEGMENT_COLORS['unseen_output'][color_variant])
-      :update_segment_colors('padding', SEGMENT_COLORS['text'][color_variant])
-      :update_segment_colors('scircle_right', SEGMENT_COLORS['scircle'][color_variant])
+       :update_segment_colors('scircle_left', SEGMENT_COLORS['scircle'][color_variant])
+       :update_segment_colors('admin', SEGMENT_COLORS['text'][color_variant])
+       :update_segment_colors('wsl', SEGMENT_COLORS['text'][color_variant])
+       :update_segment_colors('title', SEGMENT_COLORS['text'][color_variant])
+       :update_segment_colors('unseen_output', SEGMENT_COLORS['unseen_output'][color_variant])
+       :update_segment_colors('padding', SEGMENT_COLORS['text'][color_variant])
+       :update_segment_colors('scircle_right', SEGMENT_COLORS['scircle'][color_variant])
 end
 
 ---@return FormatItem[] (ref: https://wezfurlong.org/wezterm/config/lua/wezterm/format.html)
@@ -202,7 +203,7 @@ M.setup = function()
       window:perform_action(
          wezterm.action.PromptInputLine({
             description = wezterm.format({
-               { Foreground = { Color = '#FFFFFF' } },
+               { Foreground = { Color = colorscheme.ansi[8] } },
                { Attribute = { Intensity = 'Bold' } },
                { Text = 'Enter new name for tab' },
             }),

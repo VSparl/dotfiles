@@ -48,12 +48,12 @@ return {
    },
    window_close_confirmation = 'NeverPrompt',
    window_frame = {
-      active_titlebar_bg = '#090909',
+      active_titlebar_bg = 'rgba(0, 0, 0, 0.4)',
       -- font = fonts.font,
       -- font_size = fonts.font_size,
    },
    inactive_pane_hsb = {
-      saturation = 0.9,
-      brightness = 0.65,
+      saturation = 0.8,
+      brightness = 0.8,
    },
 }

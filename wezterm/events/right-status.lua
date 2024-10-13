@@ -1,6 +1,7 @@
 local wezterm = require('wezterm')
 local umath = require('utils.math')
 local Cells = require('utils.cells')
+local colorscheme = require('colors.custom')
 
 local nf = wezterm.nerdfonts
 local attr = Cells.attr
@@ -39,19 +40,19 @@ local charging_icons = {
 
 -- stylua: ignore
 local colors = {
-   date      = { fg = '#fab387', bg = 'rgba(0, 0, 0, 0.4)' },
-   battery   = { fg = '#f9e2af', bg = 'rgba(0, 0, 0, 0.4)' },
-   separator = { fg = '#74c7ec', bg = 'rgba(0, 0, 0, 0.4)' }
+   date      = { fg = colorscheme.ansi[7], bg = 'rgba(0, 0, 0, 1)' },
+   battery   = { fg = colorscheme.ansi[3], bg = 'rgba(0, 0, 0, 1)' },
+   separator = { fg = 'rgba(0, 0, 0, 1)', bg = 'rgba(0, 0, 0, 1)' }
 }
 
 local cells = Cells:new(colors)
 
 cells
-   :push('date_icon', ICON_DATE .. '  ', 'date', attr(attr.intensity('Bold')))
-   :push('date_text', '', 'date', attr(attr.intensity('Bold')))
-   :push('separator', ' ' .. ICON_SEPARATOR .. '  ', 'separator')
-   :push('battery_icon', '', 'battery')
-   :push('battery_text', '', 'battery', attr(attr.intensity('Bold')))
+    :push('date_icon', ICON_DATE .. '  ', 'date', attr(attr.intensity('Bold')))
+    :push('date_text', '', 'date', attr(attr.intensity('Bold')))
+    :push('separator', ' ' .. ICON_SEPARATOR .. '  ', 'separator')
+    :push('battery_icon', '', 'battery')
+    :push('battery_text', '', 'battery', attr(attr.intensity('Bold')))
 
 ---@return string, string
 local function battery_info()
@@ -79,9 +80,9 @@ M.setup = function()
       local battery_text, battery_icon = battery_info()
 
       cells
-         :update_segment_text('date_text', wezterm.strftime('%a %H:%M:%S'))
-         :update_segment_text('battery_icon', battery_icon)
-         :update_segment_text('battery_text', battery_text)
+          :update_segment_text('date_text', wezterm.strftime('%a %H:%M:%S'))
+          :update_segment_text('battery_icon', battery_icon)
+          :update_segment_text('battery_text', battery_text)
 
       window:set_right_status(
          wezterm.format(
