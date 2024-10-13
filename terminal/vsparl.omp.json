@@ -8,7 +8,7 @@
           "background": "transparent",
           "foreground": "#eceff4",
           "style": "diamond",
-          "template": "  {{ if ne .Env.POSH_SESSION_DEFAULT_USER .UserName }}<#d08770>{{ .UserName }}</><d><#4c566a>\uf1fa </></d>{{ end }}<#d08770>{{ .HostName }}</><#4c566a> \ue0b1</>",
+          "template": "  {{ if ne .Env.POSH_SESSION_DEFAULT_USER .UserName }}<#d08770>{{ .UserName }}</><d><#4c566a>@</></d>{{ end }}<#d08770>{{ .HostName }}</><#4c566a> \ue0b1</>",
           "type": "session"
         },
         {
