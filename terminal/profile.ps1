@@ -1,9 +1,11 @@
 # Theme initialization
 oh-my-posh init pwsh --config "$home\programming\dotfiles\terminal\vsparl.omp.json" | Invoke-Expression
 
-# Make the autocomplete suggestions come from command history
-Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
-Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+# Get nice icons of files when using ls
+Import-Module Terminal-Icons
+
+# Set fzf as command history search handler
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 # Color the command prediction
 Set-PSReadLineOption -Colors @{InlinePrediction = '#b48ead'}
