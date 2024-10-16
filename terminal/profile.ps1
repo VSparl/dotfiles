@@ -5,10 +5,17 @@ oh-my-posh init pwsh --config "$home\programming\dotfiles\terminal\vsparl.omp.js
 Import-Module Terminal-Icons
 
 # Set fzf as command history search handler
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+p' -PSReadlineChordReverseHistory 'Ctrl+r'
+# Make the fzf command more friendly
+Set-Alias fzf Invoke-Fzf
 
-# Color the command prediction
-Set-PSReadLineOption -Colors @{InlinePrediction = '#b48ead'}
+# Override the default colors to match nord theme
+Set-PSReadLineOption -Colors @{
+	InlinePrediction = '#b48ead'
+	Parameter = '#8fbcbb'
+	String = '#a3be8c'
+	Command = '#88c0d0'
+}
 
 # Aliases
 Set-Alias celar clear
