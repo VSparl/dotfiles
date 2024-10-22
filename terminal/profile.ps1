@@ -21,6 +21,7 @@ Set-PSReadLineOption -Colors @{
 Set-Alias celar clear
 Set-Alias claer clear
 Set-Alias cat bat
+Set-Alias paste Get-Clipboard
 
 # Function to remove items recursively and forced, similar to Unix's "rm -rf" command
 function rmf([string]$item)
