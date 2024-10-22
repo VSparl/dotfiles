@@ -8,7 +8,7 @@
           "background": "transparent",
           "foreground": "#eceff4",
           "style": "diamond",
-          "template": "  {{ if ne .Env.POSH_SESSION_DEFAULT_USER .UserName }}<#d08770>{{ .UserName }}</><d><#4c566a>@</></d>{{ end }}<#d08770>{{ .HostName }}</><#4c566a> \ue0b1</>",
+          "template": "{{ if ne .Env.POSH_SESSION_DEFAULT_USER .UserName }}<#d08770>{{ .UserName }}</><d><#4c566a>@</></d>{{ end }}<#d08770>{{ .HostName }}</><#4c566a> \ue0b1</>",
           "type": "session"
         },
         {
@@ -81,7 +81,7 @@
         {
           "foreground": "#4c566a",
           "style": "plain",
-          "template": " ~#@\u276f",
+          "template": "~#@\u276f",
           "type": "text"
         }
       ],
@@ -118,8 +118,8 @@
   "final_space": true,
   "transient_prompt": {
     "background": "transparent",
-    "foreground": "#4c566a",
-    "template": " \u276f "
+    "foreground": "#d08770",
+    "template": ">> "
   },
   "version": 2
 }
