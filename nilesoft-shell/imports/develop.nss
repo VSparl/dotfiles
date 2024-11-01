@@ -2,6 +2,7 @@
 {
 	// Open in WezTerm
 	item(title="Open WezTerm here" tip=tip_run_admin admin=has_admin cmd='wezterm-gui.exe' args='start --cwd "@sel.dir"')
+	separator
 
 	// Editors
 	menu(title='Editors' mode="single" image=\uE17A)
@@ -9,6 +10,14 @@
 		item(title='Visual Studio Code' image=[\uE272, #22A7F2] cmd='code' args='"@sel.path"')
 		item(title='NeoVim' cmd='wezterm-gui.exe' args='start --cwd "@sel.dir" nvim "@sel.path"')
 		item(type='file' mode="single" title='Notepad' image='@sys.bin\notepad.exe' cmd='@sys.bin\notepad.exe' args='"@sel.path"')
+	}
+
+	// Copy path
+	menu(title=title.copy_path image=icon.copy_path)
+	{
+		item(mode="single" title=@sel.path tip=sel.path cmd=command.copy(sel.path))
+		item(mode="single" type="~file" separator=before where=@sel.parent.len>3 title=sel.parent cmd=@command.copy(sel.parent))
+		item(mode="single" type='file|dir|back.dir' separator=before title=sel.file.name cmd=command.copy(sel.file.name))
 	}
 
 
@@ -35,13 +44,6 @@
 			item(title="CREATED" keys=io.dt.created(sel.path, 'y/m/d') cmd=io.dt.created(sel.path,2000,1,1))
 			item(title="MODIFIED" keys=io.dt.modified(sel.path, 'y/m/d') cmd=io.dt.modified(sel.path,2000,1,1))
 			item(title="ACCESSED" keys=io.dt.accessed(sel.path, 'y/m/d') cmd=io.dt.accessed(sel.path,2000,1,1))
-		}
-		separator
-		menu(separator="after" title=title.copy_path image=icon.copy_path)
-		{
-			item(mode="single" title=@sel.path tip=sel.path cmd=command.copy(sel.path))
-			item(mode="single" type="~file" separator=before where=@sel.parent.len>3 title=sel.parent cmd=@command.copy(sel.parent))
-			item(mode="single" type='file|dir|back.dir' separator=before title=sel.file.name cmd=command.copy(sel.file.name))
 		}
 	}
 }
