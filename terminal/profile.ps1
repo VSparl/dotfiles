@@ -72,3 +72,14 @@ function symlink {
 function fzf {
 	fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"
 }
+
+# Function to activate a venv more comfortably
+function activate {
+    $activatePath = ".\.venv\Scripts\activate"
+    
+    if (Test-Path $activatePath) {
+        . $activatePath
+    } else {
+        Write-Error "No virtual environment found at .\.venv\Scripts\activate"
+    }
+}
