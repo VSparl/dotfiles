@@ -23,6 +23,7 @@ Set-Alias claer clear
 Set-Alias cat bat
 Set-Alias paste Get-Clipboard
 Set-Alias l Get-ChildItem
+Set-Alias lvim 'C:\Users\sparl\.local\bin\lvim.ps1'
 
 # Function to remove items recursively and forced, similar to Unix's "rm -rf" command
 function rmf([string]$item)
@@ -82,4 +83,25 @@ function activate {
     } else {
         Write-Error "No virtual environment found at .\.venv\Scripts\activate"
     }
+}
+
+# Function to display an image in WezTerm
+function imgcat([string]$img){wezterm imgcat $img}
+
+# Function to go back the specified number of directoy levels
+function b {
+    param (
+        [int]$levels
+    )
+
+    # Start from the current directory
+    $path = Get-Location
+
+    # Iterate to go up 'levels' number of directories
+    for ($i = 0; $i -lt $levels; $i++) {
+        $path = Split-Path -Path $path -Parent
+    }
+
+    # Set the new location
+    Set-Location -Path $path
 }
