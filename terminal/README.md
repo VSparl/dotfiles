@@ -60,3 +60,12 @@ It is already referenced in `profile.ps1`, so you only need to install it and it
 scoop bucket add extras
 scoop install extras/terminal-icons
 ```
+
+## PSFzf
+
+[PSFzf](https://github.com/kelleyma49/PSFzf) is a wrapper for Fzf made to work in Windows PowerShell. This allows accessing the command history through [Ctrl+R].
+Install it with:
+```powershell
+scoop bucket add extras
+scoop install extras/psfzf
+```
