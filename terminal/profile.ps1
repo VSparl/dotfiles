@@ -1,9 +1,6 @@
 # Theme initialization
 oh-my-posh init pwsh --config "$home\programming\dotfiles\terminal\vsparl.omp.json" | Invoke-Expression
 
-# Get nice icons of files when using ls
-Import-Module Terminal-Icons
-
 # Set fzf as command history search handler
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+p' -PSReadlineChordReverseHistory 'Ctrl+r'
 # Make the fzf command more friendly

@@ -31,4 +31,4 @@ modify(mode=mode.multiple
 	pos=1 menu=title.more_options)
 
 // Remove useless stuff
-remove(find="Open in new tab|Open in new window|Pin to Quick access|Share using Quick Share|Git GUI Here|Git Bash Here|Open with Code|Scan with Microsoft Defender...|Pin to Start|Cut|Copy|Delete|Rename")
+remove(find="Open in new tab|Open in new window|Pin to Quick access|Share using Quick Share|Git GUI Here|Git Bash Here|Open with Code|Scan with Microsoft Defender...|Cut|Copy|Delete|Rename")
