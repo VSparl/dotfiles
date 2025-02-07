@@ -17,10 +17,16 @@ Set-PSReadLineOption -Colors @{
 # Aliases
 Set-Alias celar clear
 Set-Alias claer clear
+Set-Alias clera clear
+Set-Alias cler clear
 Set-Alias cat bat
 Set-Alias paste Get-Clipboard
 Set-Alias l Get-ChildItem
 Set-Alias lvim 'C:\Users\sparl\.local\bin\lvim.ps1'
+Set-Alias ls lsd
+
+Remove-Alias copy -Force -ErrorAction SilentlyContinue
+Set-Alias copy Set-Clipboard
 
 # Function to remove items recursively and forced, similar to Unix's "rm -rf" command
 function rmf([string]$item)
@@ -101,4 +107,29 @@ function b {
 
     # Set the new location
     Set-Location -Path $path
+}
+
+
+### Git shortcuts ###
+
+Remove-Alias gc -Force -ErrorAction SilentlyContinue  # Was Get-Content (cat)
+function gc {
+	git commit -v -m $args
+}
+
+function gs {
+	git status $args
+}
+
+function gd {
+	git diff $args
+}
+
+Remove-Alias gp -Force -ErrorAction SilentlyContinue  # Was Get-ItemProperty
+function gp {
+	git push $args
+}
+
+function ga {
+	git add $args
 }
