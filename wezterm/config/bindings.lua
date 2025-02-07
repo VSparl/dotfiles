@@ -73,7 +73,7 @@ local keys = {
    -- panes: split panes
    {
       key = 's',
-      mods = mod.SUPER,
+      mods = 'CTRL|ALT',
       action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
    },
    {

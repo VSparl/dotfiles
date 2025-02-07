@@ -7,6 +7,8 @@ wezterm.on('window-config-reloaded', function(window, pane)
    window:perform_action(act.ToggleFullScreen, pane)
 end)
 
+enable_kitty_keyboard = true
+
 local options = {
    default_prog = {},
    launch_menu = {},
