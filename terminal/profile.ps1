@@ -37,7 +37,7 @@ function rmf([string]$item)
 # Function to list all files/folders in a directory, even if they are hidden or system files
 function la()
 {
-	Get-ChildItem -Force
+	lsd -a
 }
 
 # Function to create a new directory and directly switch to it
