@@ -1,0 +1,74 @@
+theme = "onedark"
+
+[editor]
+scrolloff = 8  # How many lines to keep on screen edges
+default-yank-register = "+"  # Use system register when yanking
+shell = ["pwsh", "~/"]  # In what shell commands should be executed
+line-number = "relative"
+cursorline = true
+auto-format = false  # Don't auto-format on save
+completion-timeout = 5  # Instantly show suggestions when typing a word
+color-modes = true  # Color the mode indicator depending on the current mode
+continue-comments = false  # Don't continue a multiline comment automatically
+
+[editor.statusline]
+# What text to show in the status indicator depending on the mode
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "VISUAL"
+
+# What to show in the status line
+left = ["mode", "spacer", "spacer", "spinner", "version-control", "file-name", "read-only-indicator", "file-modification-indicator"]
+center = ["diagnostics"]
+right = ["position", "position-percentage", "spacer", "spacer", "spacer", "spacer", "file-encoding", "file-line-ending"]
+
+[editor.lsp]
+display-inlay-hints = true  # Suggest e.g. type hints when writing
+
+[editor.cursor-shape]
+# What shape the cursor should have in what scenario
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.auto-pairs]
+# Currently only one-character autopairs are supported (see issue #4035 on Helix's GitHub page)
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+'`' = '`'
+
+[editor.auto-save]
+# Auto-save after 3 minutes with no changes
+after-delay.enable = true
+after-delay.timeout = 180000
+
+[editor.indent-guides]
+render = true
+character = "▏"  # This character fills up an entire space height-wise
+
+[editor.inline-diagnostics]
+cursor-line = "warning"  # Show warnings and errors inline
+other-lines = "hint"  # Show everything on non-focused lines
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+p = "paste_clipboard_before"  # Else it puts it after the cursor
+X = "extend_line_above"  # Default X functionality seems useless
+"0" = "goto_line_start"
+"$" = "goto_line_end"
+d = "delete_selection_noyank"  # Else it overrides my current copy buffer
+A-d = "delete_selection"  # Keep possibility for the yank behaviour as well
+c = "change_selection_noyank"  # Just jank it first if you need it
+A-c = "change_selection"  # Keep possibility for the yank behaviour as well
+
+[keys.insert]
+C-backspace = "delete_word_backward"  # Muscle memory
+C-del = "delete_word_forward"  # Intuition
+
+[keys.select]
+p = "replace_with_yanked"

@@ -1,0 +1,30 @@
+# Python
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.ruff.config.settings]
+lineLength = 119
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml", ".git"]
+formatter = { command = "ruff", args = ["format"] }
+language-servers = ["pyright", "ruff"]
+rulers = [80, 120]
+
+
+# # Rust
+# [[language]]
+# name = "rust"
+# auto-format = false
+
+
+# Markdown
+[[language]]
+name = "markdown"
+indent = { tab-width = 4, unit = "    " }
