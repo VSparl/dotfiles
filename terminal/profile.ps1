@@ -24,6 +24,7 @@ Set-Alias paste Get-Clipboard
 Set-Alias l Get-ChildItem
 Set-Alias lvim 'C:\Users\sparl\.local\bin\lvim.ps1'
 Set-Alias ls lsd
+Set-Alias lg lazygit
 
 Remove-Alias copy -Force -ErrorAction SilentlyContinue
 Set-Alias copy Set-Clipboard
@@ -89,12 +90,12 @@ function activate {
 }
 
 # Function to display an image in WezTerm
-function imgcat([string]$img){wezterm imgcat $img}
+function icat([string]$img){wezterm imgcat $img}
 
-# Function to go back the specified number of directoy levels
+# Function to go back the specified number of directory levels
 function b {
     param (
-        [int]$levels
+        [int]$levels = 1
     )
 
     # Start from the current directory
