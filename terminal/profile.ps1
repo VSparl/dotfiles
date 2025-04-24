@@ -54,14 +54,6 @@ function cds()
 	Set-Location "C:\Users\sparl\OneDrive - EDU ZG\Schuljahr 2024-2025"
 }
 
-# Function to list folder contents and sort them by date
-function lst{
-	param (
-		[string]$Folder = "."
-	)
-	Get-ChildItem -Path $Folder | Sort-Object -Property CreationTime -Descending
-}
-
 # Function to create a symlink to a certain directory
 function symlink {
 	param (
@@ -110,27 +102,14 @@ function b {
     Set-Location -Path $path
 }
 
+# Remap cls to clear && ls
+Remove-Alias cls -Force -ErrorAction SilentlyContinue
+function cls {
+    param (
+        $location = "."
+    )
 
-### Git shortcuts ###
-
-Remove-Alias gc -Force -ErrorAction SilentlyContinue  # Was Get-Content (cat)
-function gc {
-	git commit -v -m $args
-}
-
-function gs {
-	git status $args
-}
-
-function gd {
-	git diff $args
-}
-
-Remove-Alias gp -Force -ErrorAction SilentlyContinue  # Was Get-ItemProperty
-function gp {
-	git push $args
-}
-
-function ga {
-	git add $args
+    cd $location
+    clear
+    ls
 }
