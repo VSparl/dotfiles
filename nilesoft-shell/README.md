@@ -24,5 +24,5 @@ sudo cmd /c mklink $home\scoop\apps\nilesoft-shell\current\shell.nss (Resolve-Pa
 
 The other files that need to be accessed are in the `extras` folder, which recieves its symlink using:
 ```powershell
-sudo cmd /c mklink /d $home\scoop\apps\nilesoft-shell\current\extras\ (Resolve-Path .\exras).Path
+sudo cmd /c mklink /d $home\scoop\apps\nilesoft-shell\current\extras\ (Resolve-Path .\extras).Path
 ```
