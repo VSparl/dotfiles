@@ -8,20 +8,20 @@
 	tip.enabled=true
 }
 
-import 'imports/theme.nss'
-import 'imports/images.nss'
+import 'extras/imports/theme.nss'
+import 'extras/imports/images.nss'
 
-import 'imports/modify.nss'
+import 'extras/imports/modify.nss'
 
 menu(mode="multiple" title=title.more_options image=icon.more_options)
 {
 }
 
-import 'imports/develop.nss'
-import 'imports/taskbar.nss'
+import 'extras/imports/develop.nss'
+import 'extras/imports/taskbar.nss'
 
 // ----------------------------------------
-// Disabled imports
-// import 'imports/file-manage.nss'
-// import 'imports/goto.nss'
+// Disabled modules
+// import 'extras/imports/file-manage.nss'
+// import 'extras/imports/goto.nss'
 // ----------------------------------------
