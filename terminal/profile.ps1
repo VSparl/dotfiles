@@ -19,6 +19,7 @@ Set-Alias celar clear
 Set-Alias claer clear
 Set-Alias clera clear
 Set-Alias cler clear
+Set-Alias lcear clear
 Set-Alias cat bat
 Set-Alias paste Get-Clipboard
 Set-Alias l Get-ChildItem
