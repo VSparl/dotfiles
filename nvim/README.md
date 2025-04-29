@@ -1,7 +1,7 @@
-# Second Neovim cofig folder
+# Neovim cofig folder
 
 [Neovim](https://neovim.io/) is a text editor based on vim which offers very extensive APIs and a lot of customization options.
-This is a more minimal version compared to the previous astro nvim config that I configured myself to behave more like a "notepad on steroids" and not an IDE.
+This is a minimal config designed to behave more like a "notepad on steroids" and not an IDE.
 
 For initialization on Windows, run the following command:
 
