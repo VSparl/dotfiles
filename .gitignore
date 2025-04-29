@@ -1,2 +1,8 @@
+### terminal ###
 terminal/settings.json
+
+### xournalpp ###
+# Metadata is generated at runtime, no need to commit it
 xournalpp/metadata/*
+# Includes paths that are device- and installation-specific
+xournalpp/settings.xml
