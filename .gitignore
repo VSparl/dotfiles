@@ -6,3 +6,5 @@ terminal/settings.json
 xournalpp/metadata/*
 # Includes paths that are device- and installation-specific
 xournalpp/settings.xml
+# Print setup for windows
+xournalpp/print-config.ini
