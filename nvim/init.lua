@@ -16,3 +16,6 @@ vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+--- remove highlighting when pressing escape
+vim.keymap.set({'n'}, '<ESC>', '<CMD>nohls<CR>', { noremap = true })
