@@ -114,3 +114,12 @@ function cls {
     clear
     ls
 }
+
+# Quickly make a backup of a file
+function backup {
+    param (
+        $target
+    )
+
+    cp "$target" "$target.bak"
+}
