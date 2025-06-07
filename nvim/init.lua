@@ -19,3 +19,6 @@ vim.opt.expandtab = true
 
 --- remove highlighting when pressing escape
 vim.keymap.set({'n'}, '<ESC>', '<CMD>nohls<CR>', { noremap = true })
+
+--- Add `:whitespace` as command to trim trailing whitespace
+vim.api.nvim_create_user_command('Whitespace', '%s/\\s\\+$//g', {})
