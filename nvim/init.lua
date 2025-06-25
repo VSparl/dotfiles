@@ -4,6 +4,8 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.fillchars:append({ eob = " " })
 -- Enable absolute line numbers
 vim.opt.number = true
+-- Disable word wrap
+vim.opt.wrap = false
 
 -- don't copy stuff when deleting
 vim.keymap.set({'n', 'v'}, 'd', '"_d', { noremap = true })
@@ -28,6 +30,6 @@ vim.g.maplocalleader = " "
 -- Add `:Whitespace` as command to trim trailing whitespace
 vim.api.nvim_create_user_command('Whitespace', '%s/\\s\\+$//g', {})
 
--- Start up lazy
+-- Load terminal config and plugins
 require("config.terminal")
 require("config.lazy")
