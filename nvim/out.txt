@@ -1,8 +1,0 @@
-Failed to run `config` for nvim-lspconfig
-
-C:/Users/sparl/AppData/Local/nvim/lua/plugins/lsp_setup.lua:63: attempt to call field 'setup_handlers' (a nil value)
-
-# stacktrace:
-  - ~/AppData/Local/nvim/lua/plugins/lsp_setup.lua:63 _in_ **config**
-  - ~\AppData\Local\nvim/lua/config/lazy.lua:19
-  - ~\AppData\Local\nvim\init.lua:33
