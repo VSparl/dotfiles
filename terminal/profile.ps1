@@ -30,6 +30,9 @@ Set-Alias lg lazygit
 Remove-Alias copy -Force -ErrorAction SilentlyContinue
 Set-Alias copy Set-Clipboard
 
+Remove-Alias sl -Force -ErrorAction SilentlyContinue
+Set-Alias sl ls
+
 # Function to remove items recursively and forced, similar to Unix's "rm -rf" command
 function rmf([string]$item)
 {
