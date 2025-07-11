@@ -27,6 +27,9 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>')
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Map Ctrl+V to paste in insert mode
+vim.keymap.set('i', '<C-v>', '<C-r>+', { noremap = true, silent = true })
+
 -- Add `:Whitespace` as command to trim trailing whitespace
 vim.api.nvim_create_user_command('Whitespace', '%s/\\s\\+$//g', {})
 
