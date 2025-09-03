@@ -10,7 +10,6 @@ vim.opt.wrap = false
 -- don't copy stuff when deleting
 vim.keymap.set({'n', 'v'}, 'd', '"_d', { noremap = true })
 vim.keymap.set('n', 'dd', '"_dd', { noremap = true })
-vim.keymap.set({'n', 'v'}, 'x', '"_x', { noremap = true })
 
 -- set tab  to 4 spaces
 vim.opt.tabstop = 4
@@ -26,6 +25,8 @@ vim.keymap.set({'n'}, '<ESC>', '<CMD>nohls<CR>', { noremap = true })
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>')
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+vim.keymap.set({'n'}, '<leader>d', '<CMD>lua vim.diagnostic.open_float()<CR>', { desc = 'Show diagnostics under the cursor' })
 
 -- Map Ctrl+V to paste in insert mode
 vim.keymap.set('i', '<C-v>', '<C-r>+', { noremap = true, silent = true })
