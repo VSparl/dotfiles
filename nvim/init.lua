@@ -6,6 +6,8 @@ vim.opt.fillchars:append({ eob = " " })
 vim.opt.number = true
 -- Disable word wrap
 vim.opt.wrap = false
+-- Set scrolloff (space to keep under / below the cursor when scrolling)
+vim.opt.scrolloff = 6
 
 -- set tab  to 4 spaces
 vim.opt.tabstop = 4

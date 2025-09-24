@@ -1,6 +1,8 @@
 -- don't copy stuff when deleting
 vim.keymap.set({'n', 'v'}, 'd', '"_d', { noremap = true })
 vim.keymap.set('n', 'dd', '"_dd', { noremap = true })
+-- don't copy single characters when deleting
+vim.keymap.set('n', 'x', '"_dl')
 
 -- remove highlighting when pressing escape
 vim.keymap.set({'n'}, '<ESC>', '<CMD>nohls<CR>', { noremap = true })
