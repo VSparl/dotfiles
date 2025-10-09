@@ -7,12 +7,43 @@ return {
     {
         "mason-org/mason-lspconfig.nvim",  -- LSP server configurator
         opts = {
-            ensure_installed = { "lua_ls", "pyright" },
+            ensure_installed = { "lua_ls", "pyright", "gopls" },
         },
         dependencies = {
             { "mason-org/mason.nvim", opts = {} },
             "neovim/nvim-lspconfig",
         },
+    },
+
+    {
+      "nvimtools/none-ls.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      config = function ()
+        local null_ls = require("null-ls")
+
+        null_ls.setup({
+          sources = {
+            -- Formatters
+            null_ls.builtins.formatting.goimports,
+            null_ls.builtins.formatting.gofumpt,
+            -- Linters
+            null_ls.builtins.diagnostics.golangci_lint,
+          },
+          on_attach = function(client, bufnr)
+            if client.supports_method("textDocument/formatting") then
+              local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+              vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+              vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = bufnr,
+                callback = function()
+                  vim.lsp.buf.format({ bufnr = bufnr })
+                end,
+              })
+            end
+          end,
+        })
+      end,
     },
 
     {
@@ -57,7 +88,7 @@ return {
         "nvim-treesitter/nvim-treesitter",  -- Parsing & Syntax highlighting
         build = ":TSUpdate",
         opts = {
-            ensure_installed = { "lua", "python", "markdown", "json" },  -- Languages for which parsers should be downloaded
+            ensure_installed = { "lua", "python", "markdown", "json", "go" },  -- Languages for which parsers should be downloaded
             highlight = { enable = true },
         },
     },
