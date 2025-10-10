@@ -1,0 +1,52 @@
+# Editing these config files easily
+alias zshedit="nvim ~/.zshrc && source ~/.zshrc"
+alias aliasedit="nvim ~/.zsh_aliases && source ~/.zsh_aliases"
+
+# Utilities
+alias checksize="du -bsh"
+alias icat=chafa
+alias activate="source ./venv/bin/activate"
+alias execute="chmod +x"
+alias paste="wl-paste"
+alias copy="wl-copy"
+
+# Better program alternatives
+alias cat=bat
+alias lg=lazygit
+alias ls=lsd
+
+# Ease of use
+alias cls="clear && ls"
+alias open=xdg-open
+alias py=python3
+alias dps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
+
+# Typo corrections
+alias clera=clear
+alias cler=clear
+alias ckear=clear
+alias cker=clear
+alias claer=clear
+alias celar=clear
+alias clar=clear
+alias cleaer=clear
+alias cöear=clear
+alias celr=clear
+alias laer=clear
+
+alias vnim=nvim
+alias vim=nvim
+alias nivm=nvim
+
+function backup() {
+	cp $1 $1.bak
+}
+
+function cnd() {
+	mkdir $1
+	cd $1
+}
+
+function cheat() {
+    curl -s "cheat.sh/$1" | cat
+}
