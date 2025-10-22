@@ -20,7 +20,7 @@ vim.keymap.set({'n'}, '<LEADER>eo', '<CMD>:Oil<CR>', { desc = 'Open file explore
 vim.keymap.set({'n', 'i', 'v'}, '<C-a>', '<ESC>ggVG', { desc = 'Select entire buffer' })
 
 -- Code folding
-vim.opt.foldcolumn = "1"  -- Show available folds
 vim.opt.foldlevelstart = 3  -- Fold deeply nested things on buffer open
-vim.opt.foldmethod = "indent"  -- use indentation to generate folds
-vim.keymap.set("n", "<LEADER>f", 'za', { desc = "toggle fold" })
+vim.opt.foldmethod = 'indent'  -- use indentation to generate folds
+vim.keymap.set('n', '<LEADER>ff', 'za', { desc = 'toggle fold' })
+vim.keymap.set('n', '<LEADER>fu', '<CMD>normal zR<CR>', { desc = 'Unfold all' })
