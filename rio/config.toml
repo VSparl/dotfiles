@@ -1,3 +1,5 @@
+# Feature & config documentation can be found here: https://rioterm.com/docs/config
+
 ###################
 # General
 ###################
@@ -123,6 +125,7 @@ mode = "fullscreen"
 opacity = 0.95
 # blur = true
 decorations = "transparent"
+colorspace = "display-p3"
 
 ###################
 # Renderer
@@ -147,11 +150,12 @@ decorations = "transparent"
 #       will be done like enable font ligatures or emoji support.
 #       For more information please check the docs.
 
-# [renderer]
-# performance = "high"
+[renderer]
+performance = "high"
 # backend = "automatic"
 disable-unfocused-render = true
-# level = 1
+level = 1
+# filters = ["newpixiecrt"]
 
 ###################
 # Keyboard
