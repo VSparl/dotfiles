@@ -8,3 +8,7 @@ xournalpp/metadata/*
 xournalpp/settings.xml
 # Print setup for windows
 xournalpp/print-config.ini
+
+### Neovim ###
+# I regularly update anyway, just use the newest version
+nvim/lazy-lock.json
