@@ -1,14 +1,3 @@
-### terminal ###
-terminal/settings.json
-
-### xournalpp ###
-# Metadata is generated at runtime, no need to commit it
-xournalpp/metadata/*
-# Includes paths that are device- and installation-specific
-xournalpp/settings.xml
-# Print setup for windows
-xournalpp/print-config.ini
-
 ### Neovim ###
 # I regularly update anyway, just use the newest version
 nvim/lazy-lock.json
