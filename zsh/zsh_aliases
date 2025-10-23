@@ -5,7 +5,7 @@ alias aliasedit="nvim ~/.zsh_aliases && source ~/.zsh_aliases"
 # Utilities
 alias checksize="du -bsh"
 alias icat=chafa
-alias activate="source ./venv/bin/activate"
+alias activate="source ./venv/bin/activate &> /dev/null || source ./.venv/bin/activate &> /dev/null"
 alias execute="chmod +x"
 alias paste="wl-paste"
 alias copy="wl-copy"
