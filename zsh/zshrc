@@ -80,3 +80,8 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export FZF_BASE=/usr/share/fzf
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/sparl/.lmstudio/bin"
+# End of LM Studio CLI section
+
