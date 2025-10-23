@@ -299,12 +299,11 @@ weight = 600  # Semi Bold italic
 # Create custom Key bindings for Rio terminal
 # More information in: https://raphamorim.io/rio/docs/config/bindings
 
-# [bindings]
-# keys = [
-#   { key = "q", with = "super", action = "Quit" },
-#   # Bytes[27, 91, 53, 126] is equivalent to "\x1b[5~"
-#   { key = "home", with = "super | shift", bytes = [27, 91, 53, 126] }
-# ]
+[bindings]
+keys = [
+    { key = "J", with = "control | shift", action = "SelectNextSplit" },
+    { key = "K", with = "control | shift", action = "SelectPrevSplit" },
+]
 
 ###################
 # Log level
