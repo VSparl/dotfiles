@@ -20,6 +20,7 @@ alias cls="clear && ls"
 alias open=xdg-open
 alias py=python3
 alias dps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
+alias cds='cd ~/school/OneDrive/Schuljahr\ 2025-2026'
 
 # Typo corrections
 alias clera=clear
@@ -33,20 +34,35 @@ alias cleaer=clear
 alias cöear=clear
 alias celr=clear
 alias laer=clear
+alias celra=clear
 
 alias vnim=nvim
 alias vim=nvim
 alias nivm=nvim
+
+alias sl=ls
 
 function backup() {
 	cp $1 $1.bak
 }
 
 function cnd() {
-	mkdir $1
+	mkdir -p $1
 	cd $1
 }
 
 function cheat() {
     curl -s "cheat.sh/$1" | cat
 }
+
+# Use `r` to change directory with ranger
+function ranger_cd() {
+    temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
+    ranger --choosedir="$temp_file" -- "${@:-$PWD}"
+    if [ -f "$temp_file" ]; then
+        chosen_dir="$(cat "$temp_file")"
+        [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ] && cd "$chosen_dir"
+    fi
+    rm -f "$temp_file"
+}
+alias r='ranger_cd'
