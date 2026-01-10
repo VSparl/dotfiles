@@ -20,7 +20,8 @@ alias cls="clear && ls"
 alias open=xdg-open
 alias py=python3
 alias dps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
-alias cds='cd ~/school/OneDrive/Schuljahr\ 2025-2026'
+alias cds="cd ~/school/OneDrive/Schuljahr\ 2025-2026"
+alias mkvenv="python3 -m venv .venv && source .venv/bin/activate"
 
 # Typo corrections
 alias clera=clear
@@ -55,7 +56,7 @@ function cheat() {
     curl -s "cheat.sh/$1" | cat
 }
 
-# Use `r` to change directory with ranger
+# Use `rcd` to change directory with ranger
 function ranger_cd() {
     temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
     ranger --choosedir="$temp_file" -- "${@:-$PWD}"
@@ -65,4 +66,4 @@ function ranger_cd() {
     fi
     rm -f "$temp_file"
 }
-alias r='ranger_cd'
+alias rcd="ranger_cd"
