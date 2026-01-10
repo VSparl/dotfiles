@@ -56,6 +56,11 @@ function cheat() {
     curl -s "cheat.sh/$1" | cat
 }
 
+# Open shell in docker containers
+function dbash() {
+    docker exec -it $1 /bin/bash
+}
+
 # Use `rcd` to change directory with ranger
 function ranger_cd() {
     temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
