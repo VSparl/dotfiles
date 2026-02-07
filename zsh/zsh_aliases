@@ -9,6 +9,7 @@ alias activate="source ./venv/bin/activate &> /dev/null || source ./.venv/bin/ac
 alias execute="chmod +x"
 alias paste="wl-paste"
 alias copy="wl-copy"
+alias y="yazi"
 
 # Better program alternatives
 alias cat=bat
@@ -22,6 +23,8 @@ alias py=python3
 alias dps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 alias cds="cd ~/school/OneDrive/Schuljahr\ 2025-2026"
 alias mkvenv="python3 -m venv .venv && source .venv/bin/activate"
+alias flushdns="sudo resolvectl flush-caches && sudo systemd-resolve --flush-caches"
+alias ts="tailscale"
 
 # Typo corrections
 alias clera=clear
@@ -61,14 +64,13 @@ function dbash() {
     docker exec -it $1 /bin/bash
 }
 
-# Use `rcd` to change directory with ranger
-function ranger_cd() {
-    temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
-    ranger --choosedir="$temp_file" -- "${@:-$PWD}"
-    if [ -f "$temp_file" ]; then
-        chosen_dir="$(cat "$temp_file")"
-        [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ] && cd "$chosen_dir"
+# Navigate using Yazi
+function yy() {
+    local _yy_tmp=$(mktemp -t "yazi-cwd.XXXXXX")
+    yazi "$@" --cwd-file="$_yy_tmp"
+    local _yy_cwd=$(cat -- "$_yy_tmp")
+    rm -f -- "$_yy_tmp"
+    if [ -n "$_yy_cwd" ] && [ "$_yy_cwd" != "$PWD" ]; then
+        cd -- "$_yy_cwd"
     fi
-    rm -f "$temp_file"
-}
-alias rcd="ranger_cd"
+}   
