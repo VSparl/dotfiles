@@ -22,5 +22,8 @@ vim.keymap.set({'n', 'i', 'v'}, '<C-a>', '<ESC>ggVG', { desc = 'Select entire bu
 -- Code folding
 vim.opt.foldlevelstart = 3  -- Fold deeply nested things on buffer open
 vim.opt.foldmethod = 'indent'  -- use indentation to generate folds
-vim.keymap.set('n', '<LEADER>ff', 'za', { desc = 'toggle fold' })
-vim.keymap.set('n', '<LEADER>fu', '<CMD>normal zR<CR>', { desc = 'Unfold all' })
+vim.keymap.set('n', '<LEADER>ff', 'za', { desc = 'Toggle fold' })
+vim.keymap.set('n', '<LEADER>fu', 'zR', { desc = 'Unfold all' })
+
+-- Text wrapping
+vim.keymap.set('n', '<LEADER>w', '<CMD>:set wrap<CR><CMD>:set linebreak<CR>', {desc = 'Enable text wrapping'})
