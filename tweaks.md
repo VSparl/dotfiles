@@ -16,3 +16,15 @@ Because the Activate.ps1 script of the Python `venv` module takes control of the
 To combat this, you can set `$env:VIRTUAL_ENV_DISABLE_PROMPT = 1` in the global `Activate.ps1` file so it persists for all new venvs created. This should be done on the line after `$env:VIRTUAL_ENV = $VenvDir`, which should be around line 221.
 If you installed Python with scoop, you can find the `Activate.ps1` file under `$home\scoop\apps\python\current\Lib\venv\scripts\common\Activate.ps1`
 > Note: This workaround will not apply to venvs that have already been created. Here, you need to perform the same steps, but in the directory of the venv itself rather than the global one for all venvs.
+
+## Switch Escape and CapsLk on Windows
+
+Nifty registry edit: Make a file with a `.reg` extension containing the following:
+
+```
+REGEDIT4
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+"Scancode Map"=hex:00,00,00,00,00,00,00,00,02,00,00,00,01,00,3a,00,00,00,00,00   
+```
+
+Double-click the file to apply the registry edit and reboot to be sure. Your CapsLk and Esc keys are now swapped for the entire operating system.
