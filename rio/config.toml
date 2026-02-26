@@ -194,12 +194,12 @@ family = "JetBrainsMono Nerd Font"
 # Note: Font features do not have support to live reload on configuration,
 # so to reflect your changes, you will need to close and reopen Rio.
 
-size = 15
+size = 16
 
 [fonts.regular]
 family = "JetBrainsMono Nerd Font"
 style = "normal"
-weight = 200  # Extra Light
+weight = 300  # Extra Light
 
 [fonts.bold]
 family = "JetBrainsMono Nerd Font"
@@ -209,7 +209,7 @@ weight = 600  # Semi Bold
 [fonts.italic]
 family = "JetBrainsMono Nerd Font"
 style = "italic"
-weight = 200  # Extra Light italic
+weight = 300  # Extra Light italic
 
 [fonts.bold-italic]
 family = "JetBrainsMono Nerd Font"
@@ -303,12 +303,14 @@ weight = 600  # Semi Bold italic
 keys = [
     { key = "J", with = "control | shift", action = "SelectNextSplit" },
     { key = "K", with = "control | shift", action = "SelectPrevSplit" },
+    { key = "1", with = "control | shift", action = "IncreaseFontSize"},  # Swiss keyboard has + as shift 1
 ]
 
 ###################
 # Log level
 ###################
 # This property enables log level filter and file. The default level is "OFF" and the logs are not logged to a file as default.
+# The default log file is located at ~/.config/rio/log/rio.log
 
 # [developer]
 # log-level = "WARN"
