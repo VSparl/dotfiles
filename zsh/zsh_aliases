@@ -10,6 +10,7 @@ alias execute="chmod +x"
 alias paste="wl-paste"
 alias copy="wl-copy"
 alias y="yazi"
+alias signal=gurk
 
 # Better program alternatives
 alias cat=bat
@@ -25,6 +26,7 @@ alias cds="cd ~/school/OneDrive/Schuljahr\ 2025-2026"
 alias mkvenv="python3 -m venv .venv && source .venv/bin/activate"
 alias flushdns="sudo resolvectl flush-caches && sudo systemd-resolve --flush-caches"
 alias ts="tailscale"
+alias pcat="cat --plain"
 
 # Typo corrections
 alias clera=clear
